@@ -14,8 +14,10 @@ async function render(pageContext: PageContextServer) {
 
   // See https://vite-plugin-ssr.com/head
   const { documentProps } = pageContext.exports
+  console.log('Document props', documentProps);
   const title = (documentProps && documentProps.title) || 'Vite SSR app'
   const desc = (documentProps && documentProps.description) || 'App using Vite + vite-plugin-ssr'
+  const image = (documentProps && documentProps.image) || ''
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">
@@ -24,6 +26,7 @@ async function render(pageContext: PageContextServer) {
         <link rel="icon" href="${logoUrl}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
+        <meta property="og:image" content="${image}" />
         <title>${title}</title>
       </head>
       <body>
