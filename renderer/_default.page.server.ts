@@ -29,7 +29,7 @@ async function render(pageContext: PageContextServer) {
         <meta name="twitter:card" content="summary_large_image"/>
         <meta property="og:title" content="${title}"/>  
         <meta property="og:description" content="${desc}"/>
-        <meta property="og:image" content="${image}" />
+        <meta property="og:image" content="https://storage.googleapis.com/keybe/kb.live/img/mail/header_white.png" />
         <title>${title}</title>
       </head>
       <body>
